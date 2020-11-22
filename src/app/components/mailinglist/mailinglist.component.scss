@@ -1,0 +1,44 @@
+.content {
+  margin-top: 20px;
+  margin-bottom: 50px;
+  border: red solid 1px;
+  padding: 0 0 23px 0;
+
+  .form {
+    margin: 0 50px 0 50px;
+
+    .form-elm {
+      padding-bottom: 5px;
+    }
+  }
+
+  input[type="text"] {
+    text-align: center !important;
+    height: 38px;
+    @media(max-width: 767px) {
+      //width: 152px;
+    }
+  }
+
+  input[type="submit"] {
+    border: red solid 1px;
+    background-color: transparent;
+    width: 173px;
+    @media(max-width: 400px) {
+      width: 152px;
+    }
+
+    &:hover {
+      background-color: red;
+    }
+  }
+
+  @media(max-width: 400px) {
+    padding: 0 0 5px 0;
+    font-size: small;
+  }
+
+  .invalid-feedback {
+    display: inherit;
+  }
+}

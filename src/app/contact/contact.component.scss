@@ -1,0 +1,47 @@
+.row {
+  text-align: center;
+}
+
+.logo {
+  width: 300px;
+
+  @media (min-width: 992px) {
+    width: 350px;
+    &.nodust {
+      width: 370px;
+    }
+  }
+}
+
+.form {
+
+  textarea {
+    height: 120px;
+  }
+
+  @media (min-width: 768px) {
+    margin-right: 5px;
+  }
+
+  .form-elm {
+    padding: 10px;
+  }
+
+  input[type="submit"] {
+    border: red solid 1px;
+    background-color: transparent;
+    width: 173px;
+    @media(max-width: 400px) {
+      width: 152px;
+    }
+
+    &:hover {
+      background-color: red;
+    }
+  }
+
+  .invalid-feedback {
+    display: inherit;
+  }
+
+}

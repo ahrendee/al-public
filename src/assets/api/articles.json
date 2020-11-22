@@ -1,0 +1,325 @@
+[
+  {
+    "id": 10,
+    "type": "music",
+    "label": "New Eternity (CD)",
+    "subLabel": "(sealed)",
+    "itemPrice": "11.99",
+    "itemPriceOriginal": "13.99",
+    "image": "shop/new-eternity-cd.jpg",
+    "items": 0,
+    "package": "S"
+  },
+  {
+    "id": 20,
+    "type": "music",
+    "label": "New Eternity (Vinyl Blue)",
+    "itemPrice": "15.99",
+    "itemPriceOriginal": "17.99",
+    "image": "shop/new-eternity-vinyl.jpg",
+    "items": 0,
+    "package": "L"
+  },
+  {
+    "id": 30,
+    "type": "music",
+    "label": "New Eternity (Vinyl Black)",
+    "itemPrice": "13.99",
+    "itemPriceOriginal": "15.99",
+    "image": "shop/new-eternity-vinyl-black.jpg",
+    "items": 0,
+    "package": "L"
+  },
+  {
+    "id": 40,
+    "type": "tshirt",
+    "label": "New Eternity T-shirt",
+    "subLabel": "Limited edition!",
+    "itemPrice": "15.99",
+    "itemPriceOriginal": "17.99",
+    "image": "shop/new-eternity-shirt.jpg",
+    "package": "L",
+    "sizes": [
+      {
+        "type": "Girl S",
+        "items": 0
+      },
+      {
+        "type": "Girl M",
+        "items": 0
+      },
+      {
+        "type": "Girl L",
+        "items": 0
+      },
+      {
+        "type": "S",
+        "items": 0
+      },
+      {
+        "type": "M",
+        "items": 0
+      },
+      {
+        "type": "L",
+        "items": 0
+      },
+      {
+        "type": "XL",
+        "items": 0
+      },
+      {
+        "type": "XXL",
+        "items": 0
+      }
+    ],
+    "items": 0
+  },
+  {
+    "id": 15,
+    "type": "tshirt",
+    "label": "New Eternity (Blue vinyl + T-Shirt)",
+    "subLabel": "<strong>COMBI DEAL!</strong>",
+    "itemPrice": "31",
+    "itemPriceOriginal": "35.98",
+    "image": "shop/new-eternity-vinyl-shirt.jpg",
+    "package": "L",
+    "sizes": [
+      {
+        "type": "Girl S",
+        "items": 0
+      },
+      {
+        "type": "Girl M",
+        "items": 0
+      },
+      {
+        "type": "Girl L",
+        "items": 0
+      },
+      {
+        "type": "S",
+        "items": 0
+      },
+      {
+        "type": "M",
+        "items": 0
+      },
+      {
+        "type": "L",
+        "items": 0
+      },
+      {
+        "type": "XL",
+        "items": 0
+      },
+      {
+        "type": "XXL",
+        "items": 0
+      }
+    ],
+    "items": 0
+  },
+  {
+    "id": 16,
+    "type": "tshirt",
+    "label": "New Eternity (Black vinyl + T-Shirt)",
+    "subLabel": "<strong>COMBI DEAL!</strong>",
+    "itemPrice": "29",
+    "itemPriceOriginal": "33.98",
+    "image": "shop/new-eternity-vinyl-black-shirt.jpg",
+    "package": "L",
+    "sizes": [
+      {
+        "type": "Girl S",
+        "items": 0
+      },
+      {
+        "type": "Girl M",
+        "items": 0
+      },
+      {
+        "type": "Girl L",
+        "items": 0
+      },
+      {
+        "type": "S",
+        "items": 0
+      },
+      {
+        "type": "M",
+        "items": 0
+      },
+      {
+        "type": "L",
+        "items": 0
+      },
+      {
+        "type": "XL",
+        "items": 0
+      },
+      {
+        "type": "XXL",
+        "items": 0
+      }
+    ],
+    "items": 0
+  },
+  {
+    "id": 17,
+    "type": "tshirt",
+    "label": "New Eternity (CD + T-Shirt)",
+    "subLabel": "<strong>COMBI DEAL!</strong>",
+    "itemPrice": "27",
+    "itemPriceOriginal": "31.98",
+    "image": "shop/new-eternity-cd-shirt.jpg",
+    "package": "L",
+    "sizes": [
+      {
+        "type": "Girl S",
+        "items": 0
+      },
+      {
+        "type": "Girl M",
+        "items": 0
+      },
+      {
+        "type": "Girl L",
+        "items": 0
+      },
+      {
+        "type": "S",
+        "items": 0
+      },
+      {
+        "type": "M",
+        "items": 0
+      },
+      {
+        "type": "L",
+        "items": 0
+      },
+      {
+        "type": "XL",
+        "items": 0
+      },
+      {
+        "type": "XXL",
+        "items": 0
+      }
+    ],
+    "items": 0
+  },
+  {
+    "id": 13,
+    "type": "tshirt",
+    "label": "New Eternity (Blue vinyl + T-Shirt + CD)",
+    "subLabel": "<strong>COMBI DEAL!</strong>",
+    "itemPrice": "42.50",
+    "itemPriceOriginal": "49.97",
+    "image": "shop/new-eternity-vinyl-combi-3.jpg",
+    "package": "L",
+    "sizes": [
+      {
+        "type": "Girl S",
+        "items": 0
+      },
+      {
+        "type": "Girl M",
+        "items": 0
+      },
+      {
+        "type": "Girl L",
+        "items": 0
+      },
+      {
+        "type": "S",
+        "items": 0
+      },
+      {
+        "type": "M",
+        "items": 0
+      },
+      {
+        "type": "L",
+        "items": 0
+      },
+      {
+        "type": "XL",
+        "items": 0
+      },
+      {
+        "type": "XXL",
+        "items": 0
+      }
+    ],
+    "items": 0
+  },
+  {
+    "id": 14,
+    "type": "tshirt",
+    "label": "New Eternity (Black vinyl + T-Shirt + CD)",
+    "subLabel": "<strong>COMBI DEAL!</strong>",
+    "itemPrice": "40.50",
+    "itemPriceOriginal": "47.97",
+    "image": "shop/new-eternity-vinyl-black-combi-4.jpg",
+    "package": "L",
+    "sizes": [
+      {
+        "type": "Girl S",
+        "items": 0
+      },
+      {
+        "type": "Girl M",
+        "items": 0
+      },
+      {
+        "type": "Girl L",
+        "items": 0
+      },
+      {
+        "type": "S",
+        "items": 0
+      },
+      {
+        "type": "M",
+        "items": 0
+      },
+      {
+        "type": "L",
+        "items": 0
+      },
+      {
+        "type": "XL",
+        "items": 0
+      },
+      {
+        "type": "XXL",
+        "items": 0
+      }
+    ],
+    "items": 0
+  },
+  {
+    "id": 12,
+    "type": "music",
+    "label": "New Eternity (CD + Blue vinyl)",
+    "subLabel": "<strong>COMBI DEAL!</strong>",
+    "itemPrice": "27",
+    "itemPriceOriginal": "31.98",
+    "image": "shop/new-eternity-vinyl-combi-2.jpg",
+    "items": 0,
+    "package": "L"
+  },
+  {
+    "id": 11,
+    "type": "music",
+    "label": "New Eternity (CD + Black vinyl)",
+    "subLabel": "<strong>COMBI DEAL!</strong>",
+    "itemPrice": "25",
+    "itemPriceOriginal": "29.98",
+    "image": "shop/new-eternity-vinyl-black-combi-1.jpg",
+    "items": 0,
+    "package": "L"
+  }
+]

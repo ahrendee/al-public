@@ -1,0 +1,49 @@
+table {
+  width: inherit;
+
+  thead {
+    border: red 1px solid;
+  }
+
+  tbody {
+
+    tr {
+
+      &.past-gig {
+        color: #aaaaaa;
+        font-style: italic;
+      }
+
+      td {
+        padding: 15px 0 0 0;
+        vertical-align: top;
+        max-width: 200px;
+
+        @media(max-width: 400px) {
+          text-align: left;
+          font-size: small;
+          padding-left: 10px;
+        }
+
+        .option {
+          font-style: italic;
+        }
+
+        &.date {
+          white-space: nowrap;
+        }
+
+        &.subtitle {
+          text-align: center;
+          border: 1px solid red;
+          padding-top: 0;
+        }
+
+        a {
+          color: white;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

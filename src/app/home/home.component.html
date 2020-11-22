@@ -1,0 +1,238 @@
+<app-header [page]="'Welcome to the New Eternity'"></app-header>
+
+<!-- DEAD END VIDEO -->
+<div class="news-1 news-item container">
+  <div class="content">
+    <div class="row">
+      <!--      <div class="col-sm-12 news-item-hdr">-->
+      <!--        2019-11-21-->
+      <!--      </div>-->
+    </div>
+    <div class="row flex-column-reverse flex-md-row">
+      <div class="col-sm-12 col-md-6 text">
+        <h3><span>New video 'Dead End' on YouTube!</span></h3>
+        <p>
+          Check out our new video: <a routerLink="../videos" routerLinkActive="active">'Dead End'</a> - Live at the <span style="white-space: nowrap">Bel Air</span> in Breda!
+        </p>
+        <p>
+          Keep an eye on the <a routerLink="../gigs" routerLinkActive="active">gigs</a> page to stay up-to-date and
+          be sure to enroll in the mailinglist (scroll all the way down).<br>&nbsp;
+        </p>
+      </div>
+      <div class="col-sm-12 col-md-6 img">
+        <img src="assets/august_life_live.jpg"/><br>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CAROUSEL -->
+<div class="news-1 container">
+  <div class="content">
+    <div class="row">
+      <div class="col header">
+        <div id="demo" class="carousel slide" data-ride="carousel">
+
+          <!-- Indicators -->
+          <!--        <ul class="carousel-indicators">-->
+          <!--          <li data-target="#demo" data-slide-to="0" class="active"></li>-->
+          <!--          <li data-target="#demo" data-slide-to="1"></li>-->
+          <!--          <li data-target="#demo" data-slide-to="2"></li>-->
+          <!--        </ul>-->
+
+          <!-- The slideshow -->
+          <div class="carousel-inner">
+            <div *ngFor="let img of carouselImages" class="carousel-item{{ img.active ? ' active' : '' }}">
+              <div *ngIf="img.author" class="author"> {{ img.author }}</div>
+              <img src="assets/home_carousel/{{ img.name }}"/>
+            </div>
+          </div>
+
+          <!--         Left and right controls-->
+          <a class="carousel-control-prev" href="#demo" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </a>
+          <a class="carousel-control-next" href="#demo" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </a>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--<app-subheader [text]="'News'"></app-subheader>-->
+
+<!-- TODO fix this for dynamic news messages -->
+<!--<div *ngFor="let newsItem of newsItems" class="news-1 container">-->
+<!--  <div class="content">-->
+<!--    <div *ngIf="newsItem.imageType !== FACEBOOK" class="row">-->
+<!--      <div class="col-sm-6 text"><img style="width: inherit;" src="{{ newsItem.imageUrl }}"/></div>-->
+<!--      <div class="col-sm-6 text" [innerHTML]="newsItem.content"></div>-->
+<!--    </div>-->
+<!--    <div *ngIf="newsItem.imageType === FACEBOOK" class="row">-->
+<!--      <div class="col-sm-6 text">-->
+<!--        <iframe class="fb-frame"-->
+<!--                src="{{ newsItem.imageUrl }}"-->
+<!--                width="320" height="250" style="border:none;overflow:scroll" scrolling="yes" frameborder="0"-->
+<!--                allowTransparency="true" allow="encrypted-media"></iframe>-->
+<!--      </div>-->
+<!--      <div class="col-sm-6 text" [innerHTML]="newsItem.content"></div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+
+<div class="news-1 news-item container">
+  <div class="content">
+    <div class="row">
+      <!--      <div class="col-sm-12 news-item-hdr">-->
+      <!--        2019-11-21-->
+      <!--      </div>-->
+    </div>
+    <div class="row flex-column-reverse flex-md-row">
+      <div class="col-sm-12 col-md-6">
+        <iframe class="fb-frame"
+                src="https://www.facebook.com/plugins/post.php?href=https://www.facebook.com/boerderij/posts/3053854151331678&width=400"
+                width="320" height="425" style="border:none;overflow:scroll" scrolling="yes" frameborder="0"
+                allowTransparency="true" allow="encrypted-media"></iframe>
+      </div>
+      <div class="col-sm-12 col-md-6 text">
+        <h3><span>Gigs with Tyketto & August Life cancelled after all</span></h3>
+          <p>
+            Unfortunately the final verdict has come: The gigs we were supposed to play
+            with Tyketto in May have been cancelled indefinitely.
+          </p>
+          <p>
+            Keep an eye on the <a routerLink="../gigs" routerLinkActive="active">gigs</a> page to stay up-to-date and
+            be sure to enroll in the mailinglist (scroll all the way down).<br>&nbsp;
+          </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="news-1 news-item container">
+  <div class="content">
+    <div class="row">
+      <!--      <div class="col-sm-12 news-item-hdr">-->
+      <!--        2019-11-21-->
+      <!--      </div>-->
+    </div>
+    <div class="row">
+      <div class="col-sm-12 col-md-6 text">
+        <h3><span>August Life will support TYKETTO twice!</span>
+          <span style="color: red"> POSTPONED</span></h3>
+        <p>
+          Unfortunately due to the Corona crisis the support gigs with TYKETTO are postponed until further notice.
+        </p>
+        <p>
+          Check out the <a routerLink="../gigs" routerLinkActive="active">gigs</a> page to stay up-to-date and be sure
+          to register on our mailinglist (scroll all the way down).<br>&nbsp;
+        </p>
+      </div>
+      <div class="col-sm-12 col-md-6">
+        <iframe class="fb-frame"
+                src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Faugustlifeband%2Fposts%2F2143342399301565&width=400"
+                width="320" height="250" style="border:none;overflow:scroll" scrolling="yes" frameborder="0"
+                allowTransparency="true" allow="encrypted-media"></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="news-1 news-item container">
+  <div class="content">
+    <div class="row">
+      <!--      <div class="col-sm-12 news-item-hdr">-->
+      <!--        2020-03-09-->
+      <!--      </div>-->
+    </div>
+    <div class="row">
+      <div class="col-sm-12 col-md-6 img">
+        <img src="assets/threshold.png"/><br>
+      </div>
+      <div class="col-sm-12 col-md-6 text">
+        <h3><span>August Life will support Threshold!</span>
+          <span style="color: red"><br>POSTPONED</span></h3>
+        <p>
+          On April 3rd 2020, AUGUST LIFE would have supported The mighty THRESHOLD from the UK at the Hypothalamus in
+          Rheine,
+          Germany but unfortunately due to the corona virus this concert has been postponed.
+        </p>
+        <p>If you want to be kept in the loop, join our mailinglist! Scroll all the way down and sign up!</p>
+        <p>And also check the <a target="_blank"
+                                 href="https://www.facebook.com/events/2518199575091196/">Facebook</a> event
+          page.<br><br></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="news-1 news-item container">
+  <div class="content">
+    <div class="row">
+      <!--      <div class="col-sm-12 news-item-hdr">-->
+      <!--        2019-03-02-->
+      <!--      </div>-->
+    </div>
+    <div class="row">
+      <div class="col-sm-12 col-md-6 text">
+        <h3>August Life selected for<br>Alcatraz Bash!</h3>
+        <br>
+        <p>We're playing on the Alcatraz Bash for a place on the Mighty Alcatraz Festival 2020!</p>
+        <p><strong style="color: red;">UPDATE 2020-03-15:</strong><br>Unfortunately due to the corona virus the concert has been postponed.
+          As soon as a new date is available we'll let you know immediately.
+        </p>
+        <p>If you want to be the first to find out, join our mailinglist! Scroll all the way down and sign up!</p>
+        <a target="_blank"
+           href="https://www.facebook.com/events/1210151342679511/">Check the Facebook page</a>
+      </div>
+      <div class="col-sm-12 col-md-6 img">
+        <img src="assets/img/news/alcatraz_bash.jpg"/><br>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="news-1 news-item container">
+  <div class="content">
+    <div class="row">
+      <!--      <div class="col-sm-12 news-item-hdr">-->
+      <!--        2019-08-03-->
+      <!--      </div>-->
+    </div>
+    <div class="row">
+      <div class="col-sm-12 col-md-6 img">
+        <img src="assets/BlokhutLive11-5-2019flyer.png"/><br>
+      </div>
+      <div class="col-sm-12 col-md-6 text">
+        <br>
+        First LIVE REVIEW for AUGUST LIFE written by Toine van Poorten and illustrated
+        by Rita van Poorten at <a target="_blank"
+                                  href="http://www.truemetalfan.org/BlokhutLive2019.htm?fbclid=IwAR3H-wZDCE7sc7CJ8yfh7EbN-jkGkPclmQMfa49tRtnfwW7ltns6rpALb1w">truemetalfan.org</a>
+        <!--        Check out the <a routerLink="../gigs" routerLinkActive="active">gigs</a> page for the dates.<br>&nbsp;-->
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--<div class="news-1 container">-->
+<!--  <div class="content">-->
+<!--    <div class="row">-->
+<!--      <div class="col-sm-12 text"><br>-->
+<!--        DON'T MISS THIS!<br><br>AUGUST LIFE will share the stage with TYKETTO at two shows in the Netherlands.<br><br>-->
+<!--        Check out the <a routerLink="../gigs" routerLinkActive="active">gigs</a> page for the dates.<br>&nbsp;-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="row">-->
+<!--      <div class="col-sm-12 header">-->
+<!--        <iframe class="fb-frame"-->
+<!--          src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Faugustlifeband%2Fposts%2F2143342399301565&width=500"-->
+<!--          width="290" height="350" style="border:none;overflow:hidden" scrolling="yes" frameborder="0"-->
+<!--          allowTransparency="true" allow="encrypted-media"></iframe>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+

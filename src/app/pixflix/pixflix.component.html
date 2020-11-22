@@ -1,0 +1,41 @@
+<app-header [page]="'Pictures'"></app-header>
+
+<div class="container">
+  <div class="content">
+
+    <!-- links to albums -->
+    <div *ngIf="!pixState" class="row justify-content-center">
+      <div *ngFor="let folder of folders" class="col-auto">
+        <div class="link">
+          <a [innerHTML]="folder.htmlTitle" class="btn btn-outline-danger" (click)="pixState = folder.date">
+         </a></div>
+      </div>
+    </div>
+
+    <!-- back button -->
+    <div *ngIf="pixState" class="row" style="position:inherit;">
+      <div class="col-1">
+        <div class="back"><a (click)="pixState = undefined">
+          <img src="assets/ico/back.png"></a></div>
+      </div>
+      <div class="col-11"></div>
+    </div>
+
+    <!-- albums -->
+    <div *ngIf="pixState">
+      <div class="row justify-content-center">
+        <div class="col">
+          <div class="title">{{ albumList.get(pixState).title }}</div>
+        </div>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-auto" *ngFor="let image of albumList.get(pixState).pics; let i=index">
+          <img class="img-thumbnail" [src]="image.thumb" (click)="open(i, pixState)"/>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+

@@ -1,0 +1,33 @@
+.content {
+  @media (max-width: 756px) {
+    font-size: 13px;
+  }
+}
+
+a.btn {
+  color: #ffffff;
+
+  &.btn-outline-danger {
+    border-color: red;
+
+    &:hover {
+      background-color: red;
+    }
+  }
+
+  //border: red 1px solid;
+  margin: 5px 0 5px 0;
+  width: inherit;
+}
+
+.stats {
+  padding-bottom: 10px;
+
+  img {
+    width: inherit;
+  }
+
+  .text {
+    text-align: left;
+  }
+}

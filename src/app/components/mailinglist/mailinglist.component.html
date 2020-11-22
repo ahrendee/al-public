@@ -1,0 +1,51 @@
+<div class="container">
+  <div class="content">
+    <div *ngIf="!success" class="row">
+      <div class="col"><br>Join our mailing list to learn the latest news quickly!<br>&nbsp;</div>
+    </div>
+    <div *ngIf="!success" class="row">
+      <div class="col">
+
+        <form [formGroup]="mailingListForm">
+          <div class="row form">
+            <div class="col-2"></div>
+            <div class="col-sm-12 col-md-3 form-elm">
+              <input type="text"
+                     class="form-control"
+                     name="name"
+                     placeholder="Name"
+                     formControlName="name"
+                     #name>
+              <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                <div *ngIf="f.name.errors.required">Name is required</div>
+              </div>
+            </div>
+            <div class="col-sm-12 col-md-3 form-elm">
+              <input type="text"
+                     class="form-control"
+                     name="email"
+                     placeholder="Email"
+                     formControlName="email"
+                     #email>
+              <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                <div *ngIf="f.email.errors.required">Email is required</div>
+                <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+              </div>
+            </div>
+            <div class="col-sm-12 col-md-2 form-elm">
+              <input type="submit"
+                     class="btn btn-danger"
+                     value="submit"
+                     (click)="onClickSubmit()">
+            </div>
+            <div class="col-2"></div>
+          </div>
+        </form>
+
+      </div>
+    </div>
+    <div *ngIf="success" class="row">
+      <div class="col"><br>Thank you for subscribing to the August Life mailinglist!<br>&nbsp;</div>
+    </div>
+  </div>
+</div>

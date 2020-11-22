@@ -1,0 +1,97 @@
+<script>
+  gtag('config', 'UA-160726400-1', {
+    'page_title': 'Gigs',
+    'page_path': '/gigs'
+  });
+</script>
+<app-header [page]="'Gigs'"></app-header>
+
+<div class="container">
+  <div class="content">
+    <div class="row">
+      <div class="col">
+
+        <table>
+          <thead>
+          <tr>
+            <th>Date</th>
+            <th>Venue</th>
+            <th>Info</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td class="subtitle">Upcoming shows</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+          </tr>
+
+          <tr *ngIf="!upcomingGigs">
+            <td colspan="3" class="text-center">
+              <div class="spinner-grow text-light" role="status">
+                <span class="sr-only">Loading...</span>
+              </div>
+            </td>
+          </tr>
+
+          <tr *ngFor="let gig of upcomingGigs">
+            <td class="date">{{ gig.postponed ? 'TBD' : gig.date }}</td>
+            <td>
+              <span class="option" *ngIf="gig.info">{{gig.info}} - </span>
+              {{ gig.venue }}
+              <span class="option" *ngIf="gig.option"> (option)</span>
+              <span class="option" *ngIf="gig.info2"><br>({{gig.info2}})</span><br>
+              <span *ngIf="gig.country">{{ gig.city }} ({{gig.country}})</span>
+            </td>
+            <td><span *ngIf="gig.postponed"><strong>POSTPONED!</strong></span><br><a target="_blank"
+                                                                                     href="{{ gig.url }}">{{ gig.urlText }}</a>
+            </td>
+          </tr>
+
+          <tr>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td></td>
+            <td class="subtitle">Past shows</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+          </tr>
+
+          <tr *ngIf="!pastGigs">
+            <td colspan="3" class="text-center">
+              <div class="spinner-grow text-light" role="status">
+                <span class="sr-only">Loading...</span>
+              </div>
+            </td>
+          </tr>
+
+          <tr *ngFor="let gig of pastGigs" class="past-gig">
+            <td class="date">{{ gig.date }}</td>
+            <td>
+              <span class="option" *ngIf="gig.info">{{gig.info}} - </span>
+              {{ gig.venue }}
+              <span class="option" *ngIf="gig.option"> (option)</span>
+              <span class="option" *ngIf="gig.info2"><br>({{gig.info2}})</span>
+            </td>
+            <td>{{ gig.city }} ({{gig.country}})</td>
+          </tr>
+          </tbody>
+        </table>
+
+      </div>
+    </div>
+  </div>
+</div>

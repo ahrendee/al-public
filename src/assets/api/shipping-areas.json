@@ -1,0 +1,17 @@
+[
+  {
+    "area": "NL",
+    "priceS": "4",
+    "priceL": "7"
+  },
+  {
+    "area": "EU",
+    "priceS": "8",
+    "priceL": "13"
+  },
+  {
+    "area": "World",
+    "priceS": "9",
+    "priceL": "17"
+  }
+]

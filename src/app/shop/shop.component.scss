@@ -1,0 +1,101 @@
+hr {
+  background-color: white;
+
+  &.divider {
+    padding: 2px;
+  }
+}
+
+.shop {
+  input[type="text"].number-small {
+    width: 30px;
+    margin: 0 10px 0 10px;
+  }
+
+  select {
+    background-color: white;
+  }
+
+  button.btn-danger {
+    right: 16px;
+    bottom: 32px;
+    position: absolute;
+    height: 20px;
+
+    span {
+      bottom: 10px;
+      position: relative;
+    }
+  }
+}
+
+.article {
+  img {
+    max-height: 200px;
+    max-width: 200px;
+    @media(max-width: 470px) {
+      max-height: 100px;
+      max-width: 100px;
+    }
+  }
+
+  .article-txt {
+    @media(max-width: 470px) {
+      font-size: 13px;
+    }
+  }
+
+  .originalPrice {
+    text-decoration: line-through;
+    color: #ff0000;
+  }
+}
+
+.basket {
+  label {
+    width: 150px;
+  }
+}
+
+.invalid-feedback {
+  display: inherit;
+}
+
+.form-control {
+  display: initial;
+  width: 175px;
+  margin: 5px 0 5px 0;
+}
+
+input[type="submit"] {
+  border: red solid 1px;
+  background-color: transparent;
+  margin-top: 10px;
+  width: 173px;
+  @media(max-width: 400px) {
+    width: 152px;
+  }
+
+  &:hover {
+    background-color: red;
+  }
+}
+
+.info {
+
+  a {
+    color: white;
+    text-decoration: underline;
+  }
+
+  .info-ico {
+    border: solid 2px lightsteelblue;
+    border-radius: 15px;
+    color: lightsteelblue;
+    text-align: center;
+    font-weight: bold;
+    width: 30px;
+    height: 30px;
+    margin-bottom: 5px;
+  }
+}

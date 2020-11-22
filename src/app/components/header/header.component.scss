@@ -1,0 +1,35 @@
+.header.container {
+  margin-top: 50px;
+  color: #ffffff;
+
+  .col {
+    text-align: center;
+  }
+
+  .header-img {
+    width: 100%;
+    max-width: 721px;
+    padding-top: 20px;
+    -webkit-filter: drop-shadow(10px 10px 10px red);
+    filter: drop-shadow(10px 10px 10px red);
+    //-webkit-filter: drop-shadow(20px 4px 6px black);
+    //filter: drop-shadow(20px 4px 6px black);
+  }
+
+  .header-txt {
+    margin-bottom: 15px;
+    font-family: 'BankGothic Lt BT';
+    color: #ff0000;
+    font-size: 30px;
+    -webkit-filter: drop-shadow(2px 4px 6px black);
+    filter: drop-shadow(2px 4px 6px black) opacity(0.7);
+
+    &.home {
+      color: #ffffff;
+    }
+
+    @media (min-width: 768px) {
+      font-size: 50px;
+    }
+  }
+}

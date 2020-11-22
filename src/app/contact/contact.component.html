@@ -1,0 +1,79 @@
+<app-header [page]="'Contact'"></app-header>
+
+<div class="container">
+  <div class="content">
+    <div class="row">
+      <div class="col-sm-12 col-md-6">
+        <p><br>Record Label<br>
+          <a href="https://nodustrecords.com/" target="_blank"><img class="logo nodust"
+            src="assets/contact/nodust_logo.png"></a>
+        </p>
+        <p><br>Bookings<br><br>
+          <a href="https://www.jbmdisplay.com/artist/august-life/" target="_blank"><img class="logo"
+            src="assets/contact/jbm_logo.png"></a>
+        </p>
+      </div>
+      <div class="col-sm-12 col-md-6">
+
+        <p><br>Send us a message!</p>
+
+        <form [formGroup]="contactForm">
+          <div class="row form">
+            <div class="col-2"></div>
+            <div class="col-sm-12 form-elm">
+              <input type="text"
+                     class="form-control"
+                     name="name"
+                     placeholder="Name"
+                     formControlName="name"
+                     #name>
+              <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                <div *ngIf="f.name.errors.required">Name is required</div>
+              </div>
+            </div>
+            <div class="col-sm-12 form-elm">
+              <input type="text"
+                     class="form-control"
+                     name="email"
+                     placeholder="Email"
+                     formControlName="email"
+                     #email>
+              <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                <div *ngIf="f.email.errors.required">Email is required</div>
+                <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+              </div>
+            </div>
+            <div class="col-sm-12 form-elm">
+              <input type="text"
+                     class="form-control"
+                     name="subject"
+                     placeholder="Subject"
+                     formControlName="subject"
+                     #subject>
+            </div>
+            <div class="col-sm-12 form-elm">
+              <textarea type="text"
+                        class="form-control"
+                        name="message"
+                        placeholder="Message"
+                        formControlName="message"
+                        #message>
+              </textarea>
+            </div>
+            <div class="col-sm-12 col-md-2 form-elm">
+              <input type="submit"
+                     class="btn btn-danger"
+                     value="submit"
+                     (click)="onClickSubmit()">
+            </div>
+            <div class="col-2"></div>
+          </div>
+          <div *ngIf="success" class="row">
+            <div class="col"><br>Thank you for your message!<br>&nbsp;</div>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,42 @@
+nav {
+  padding-left: 25px;
+
+  .navbar-collapse {
+    flex-grow: initial;
+  }
+
+  .nav-link {
+    display: inline-block;
+  }
+
+  &.navbar {
+
+    &.fixed-top {
+      &.navbar-expand-lg {
+        &.navbar-dark {
+          &.info-color {
+            background-color: #000000;
+            filter: opacity(0.8);
+            @media (max-width: 991px) {
+              filter: opacity(0.9);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.dropdown-menu.dropdown-info.show {
+  background-color: white;
+  filter: none !important;
+}
+
+.social-icon {
+  @media (max-width: 991px) {
+    margin-right: 5px;
+  }
+  img {
+    width: 25px;
+  }
+}

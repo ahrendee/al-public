@@ -1,0 +1,20 @@
+.subheader.container {
+  margin-top: 50px;
+  color: #ffffff;
+
+  .col {
+    text-align: center;
+  }
+
+  .header-txt {
+    font-family: 'Quicksand';
+    color: #ff0000;
+    font-size: 30px;
+    -webkit-filter: drop-shadow(2px 4px 6px black);
+    filter: drop-shadow(2px 4px 6px black) opacity(0.7);
+
+    @media (min-width: 768px) {
+      font-size: 50px;
+    }
+  }
+}

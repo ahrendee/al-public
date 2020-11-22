@@ -1,0 +1,9 @@
+<div class="header container">
+  <div class="row">
+    <div class="col header">
+      <img class="header-img" src="assets/al_logo_small.png"/><br>
+      <div *ngIf="!home" class="header-txt" bind-innerHTML="page"></div>
+      <div *ngIf="home" class="header-txt home" bind-innerHTML="page"></div>
+    </div>
+  </div>
+</div>

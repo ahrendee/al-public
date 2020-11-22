@@ -1,0 +1,58 @@
+<span class="container">
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark info-color row">
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="col"></div>
+    <div class="collapse navbar-collapse col-sm-auto" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+
+        <li *ngFor="let menuItem of menuItems"
+            data-toggle="collapse" data-target=".navbar-collapse.show"
+            class="nav-item{{ menuItem.name === 'Blabla' ? ' dropdown' : ''}}">
+
+          <a class="nav-link" routerLink="{{menuItem.url}}" routerLinkActive="active">{{menuItem.name}}</a>
+          <!--          <a *ngIf="menuItem.name !== 'Material'" class="nav-link" routerLink="{{menuItem.url}}" routerLinkActive="active">{{menuItem.name}}</a>-->
+
+          <!--          <a *ngIf="menuItem.name === 'Material'" class="nav-link" id="navbarDropdownMenuLink"-->
+          <!--             data-toggle="dropdown" aria-haspopup="true"-->
+          <!--             aria-expanded="false">{{menuItem.name}}-->
+          <!--          </a>-->
+          <!--          <div *ngIf="menuItem.name === 'Material'" class="dropdown-menu dropdown-info"-->
+          <!--               aria-labelledby="navbarDropdownMenuLink">-->
+          <!--            <a class="dropdown-item" routerLink="material" routerLinkActive="active">Discography</a>-->
+          <!--            <a class="dropdown-item" routerLink="video" routerLinkActive="active">Video</a>-->
+          <!--            <a class="dropdown-item" routerLink="pictures" routerLinkActive="active">Pictures</a>-->
+          <!--          </div>-->
+
+        </li>
+
+        <!-- social media links -->
+
+        <li class="spacer">&nbsp;&nbsp;</li>
+        <li>
+          <a class="nav-link social-icon" href="https://www.facebook.com/augustlifeband/" target="_blank"><img
+            src="assets/facebook_icon.png"/></a>
+          <a class="nav-link social-icon" href="https://www.youtube.com/channel/UCu9OUNU8Goqo2y9qGhJ48KA" target="_blank"><img
+            src="assets/youtube_icon.png"/></a>
+          <a class="nav-link social-icon" href="https://www.instagram.com/august_life_band/"
+             target="_blank"><img src="assets/insta_icon.png"/></a>
+          <a class="nav-link social-icon" href="https://open.spotify.com/artist/0VlP6X9sqgRkcu2slf2HVk?si=9Px4gHTGSuqGqGPJ1waa9w"
+             target="_blank"><img src="assets/spotify_icon.png"/></a>
+          <a class="nav-link social-icon" href="https://www.deezer.com/nl/artist/50034892"
+             target="_blank"><img src="assets/deezer_icon.png"/></a>
+        </li>
+
+      </ul>
+
+      <!--    <form class="form-inline">-->
+      <!--      <div class="md-form my-0">-->
+      <!--        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">-->
+      <!--      </div>-->
+      <!--    </form>-->
+    </div>
+    <div class="col"></div>
+  </nav>
+</span>

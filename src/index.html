@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-160726400-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+
+      gtag('js', new Date());
+
+      gtag('config', 'UA-160726400-1');
+    </script>
+
+    <meta charset="utf-8">
+    <title>AUGUST LIFE | New Eternity</title>
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="al_icon_CBS_icon.ico">
+    <link href="https://fonts.googleapis.com/css?family=Metal+Mania|Righteous|Comfortaa|Bangers|Quicksand&display=swap"
+          rel="stylesheet">
+    <style>
+      /* Style the video: 100% width and height to cover the entire window */
+      #myVideo {
+        filter: brightness(.5);
+        position: fixed;
+        left: 0;
+        top: 0;
+        min-width: 100%;
+        min-height: 100%;
+      }
+
+      /* Add some content at the bottom of the video/page */
+      .content_ontop {
+        /*position: fixed;*/
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+        color: #f1f1f1;
+        width: 100%;
+        padding: 20px;
+      }
+
+      /* Style the button used to pause/play the video */
+      #myBtn {
+        width: 200px;
+        font-size: 18px;
+        padding: 10px;
+        border: none;
+        background: #000;
+        color: #fff;
+        cursor: pointer;
+      }
+
+      #myBtn:hover {
+        background: #ddd;
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <script
+      src="https://www.paypal.com/sdk/js?client-id=AZXvF_ON_Npt_sflZ6CQEDZFRihpbMp3fYenVKgOOI8aXUwvctpL_P68G3VqCao13f8CiBDgLHBWSlfO&currency=EUR">
+    </script>
+    <video style="display:block; margin: 0 auto;" autoplay muted loop preload="auto" id="myVideo">
+      <!--  <source src="https://www.w3schools.com/howto/rain.mp4" type="video/mp4">-->
+      <source src="assets/tbt.mp4" type="video/mp4">
+    </video>
+    <div class="content_ontop">
+      <app-root></app-root>
+    </div>
+  </body>
+</html>

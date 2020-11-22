@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "name": "Home",
+    "url": "home"
+  },
+  {
+    "id": 2,
+    "name": "Gigs",
+    "url": "gigs"
+  },
+  {
+    "id": 3,
+    "name": "Shop",
+    "url": "shop"
+  },
+  {
+    "id": 4,
+    "name": "EPK / Media",
+    "url": "epk"
+  },
+  {
+    "id": 5,
+    "name": "Music",
+    "url": "music"
+  },
+  {
+    "id": 6,
+    "name": "Pix",
+    "url": "pictures"
+  },
+  {
+    "id": 7,
+    "name": "Flix",
+    "url": "videos"
+  },
+  {
+    "id": 8,
+    "name": "Contact",
+    "url": "contact"
+  }
+]

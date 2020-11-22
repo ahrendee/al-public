@@ -1,0 +1,327 @@
+<app-header [page]="'Shop'"></app-header>
+
+<div *ngIf="showSuccessPage" class="container shop">
+  <div class="content">
+    <div class="row">
+      <div class="col-12 center-block text-center">
+        <p *ngIf="isTestOnCancel">!!! THIS IS A TEST RESULT !!!</p>
+        <p>Your payment was successfull!</p>
+        <p>Your order reference number is: <b>{{ orderId }}</b></p>
+        <p>Please keep it somewhere save so you can use it as reference in case you need to contact us.</p>
+        <p>Enjoy your purchase!</p>
+      </div>
+      <div class="col-12 center-block text-center"><br>
+        <button (click)="resetShop()" type="button"
+                class="btn btn-success btn-number">Go back to shop
+        </button>
+        <br><br>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="page === 'shop'" class="container shop">
+  <div class="content">
+    <div class="row">
+      <div class="col-sm-12 col-md-8">
+
+        <div class="container">
+          <div class="content article">
+
+            <div *ngFor="let article of articles" class="row">
+              <div class="col-6" style="text-align: center">
+                <img src="assets/{{article.image}}"/>
+                <br>&nbsp;
+              </div>
+              <div class="article-txt col-6" style="text-align: left">
+                <div>{{article.label}}</div>
+                <div *ngIf="article.subLabel" [innerHTML]="article.subLabel"></div>
+                <div class="originalPrice">€ {{article.itemPriceOriginal}}</div>
+                <div>€ {{article.itemPrice}}</div>
+                <select *ngIf="article.sizes" [formControl]="shirtSize">
+                  <option *ngFor="let size of article.sizes" [value]="size.type">{{size.type}}</option>
+                </select>
+                <div><br>
+                  <input class="number-small" type="text" value="nrOfItems" [formControl]="nrOfItems"/>
+                  <button (click)="addItem(article)" type="button"
+                          class="btn btn-success btn-number">Add
+                  </button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <div class="col-sm-12 col-md-4">
+        <div class="container">
+          <div class="content">
+
+            <div class="row">
+              <div class="col-12">
+                In Shopping cart:
+                <hr>
+              </div>
+            </div>
+            <div *ngFor="let article of getCartItems" class="row">
+              <div class="col-12">
+                {{article.items}} x {{article.label}}
+                <span *ngIf="article.size !== ''">({{article.size}})</span><br>
+                <span>€ {{ article.itemPrice * article.items | number : '.2-2'}}</span><br>
+                <button (click)="removeItem(article)" type="button"
+                        class="btn btn-danger btn-number"><span>x</span></button>
+                <hr class="divider">
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-12">
+                Total price: € {{ getProductPriceFromCart | number : '.2-2' }}
+                <hr>
+              </div>
+            </div>
+
+            <div *ngIf="getCartItems.length > 0" class="row">
+              <div class="col-12"><br>
+                <button (click)="goToBasket()" type="button"
+                        class="btn btn-success btn-number">Continue to payment
+                </button>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-12 info">
+                <div class="info-ico">i</div>
+                <div>
+                  <p>If you don't have a creditcard you can first create a <a href="https://www.paypal.com/"
+                                                                              target="_blank">PayPal</a> account and
+                  attach your debitcard to it. That way you can still purchase some nice items in our shop.
+                  </p>
+                  <p>
+                    Note: IDeal only works in the Netherlands and works best when the purchase is done on a computer instead of a phone.
+                  </p>
+                </div>
+                <hr>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div *ngIf="page === 'basket'" class="container basket">
+  <div class="content">
+    <div class="row">
+      <div class="col-sm-auto col-md-8">
+
+        <div class="container">
+          <div class="content">
+
+            <div class="row">
+              <div class="col-sm-auto">
+
+                <form [formGroup]="billingAddressForm">
+                  <u>Billing address</u><br>
+                  <input class="form-control" name="email" type="text" formControlName="email"
+                         [placeholder]="'Email'"><br>
+                  <div *ngIf="billingFormSubmitted && f.email.errors" class="invalid-feedback">
+                    <div *ngIf="f.email.errors.required">Email is required</div>
+                    <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+                  </div>
+                  <input class="form-control" type="text" formControlName="firstName"
+                         [placeholder]="'First Name'"><br>
+                  <div *ngIf="billingFormSubmitted && f.firstName.errors" class="invalid-feedback">
+                    <div *ngIf="f.firstName.errors.required">First name is required</div>
+                  </div>
+                  <input class="form-control" type="text" formControlName="lastName"
+                         [placeholder]="'Last Name'"><br>
+                  <div *ngIf="billingFormSubmitted && f.lastName.errors" class="invalid-feedback">
+                    <div *ngIf="f.lastName.errors.required">Last name is required</div>
+                  </div>
+                  <input class="form-control" type="text" formControlName="address"
+                         [placeholder]="'Address'"><br>
+                  <div *ngIf="billingFormSubmitted && f.address.errors" class="invalid-feedback">
+                    <div *ngIf="f.address.errors.required">Address is required</div>
+                  </div>
+                  <input class="form-control" type="text" formControlName="zipCode"
+                         [placeholder]="'Zipcode'"><br>
+                  <div *ngIf="billingFormSubmitted && f.zipCode.errors" class="invalid-feedback">
+                    <div *ngIf="f.zipCode.errors.required">Zipcode is required</div>
+                  </div>
+                  <input class="form-control" type="text" formControlName="city"
+                         [placeholder]="'City'"><br>
+                  <div *ngIf="billingFormSubmitted && f.city.errors" class="invalid-feedback">
+                    <div *ngIf="f.city.errors.required">City is required</div>
+                  </div>
+                  <select class="form-control" (change)="updateShippingFee()" *ngIf="countries"
+                          formControlName="country">
+                    <option hidden value="" selected>Country</option>
+                    <option *ngFor="let country of countries" [value]="country.alpha2Code">{{country.name}}</option>
+                  </select>
+                  <div *ngIf="billingFormSubmitted && f.country.errors" class="invalid-feedback">
+                    <div *ngIf="f.country.errors.required">Country is required</div>
+                  </div>
+                  <br>
+                  <input class="form-control" type="text" formControlName="phone"
+                         [placeholder]="'Phone'"><br>
+                  <div *ngIf="billingFormSubmitted && f.phone.errors" class="invalid-feedback">
+                    <div *ngIf="f.phone.errors.required">Phone is required</div>
+                  </div>
+                </form>
+
+              </div>
+              <div class="col-sm-auto" *ngIf="!billingShippingSame.value">
+
+                <form [formGroup]="shippingAddressForm">
+                  <u>Shipping address</u><br>
+                  <input class="form-control" name="email" type="text" formControlName="email"
+                         [placeholder]="'Email'"><br>
+                  <div *ngIf="billingFormSubmitted && sf.email.errors" class="invalid-feedback">
+                    <div *ngIf="sf.email.errors.required">Email is required</div>
+                    <div *ngIf="sf.email.errors.email">Email must be a valid email address</div>
+                  </div>
+                  <input class="form-control" type="text" formControlName="firstName" [placeholder]="'First Name'"><br>
+                  <div *ngIf="billingFormSubmitted && sf.firstName.errors" class="invalid-feedback">
+                    <div *ngIf="sf.firstName.errors.required">First name is required</div>
+                  </div>
+                  <input class="form-control" type="text" formControlName="lastName" [placeholder]="'Last Name'"><br>
+                  <div *ngIf="billingFormSubmitted && sf.lastName.errors" class="invalid-feedback">
+                    <div *ngIf="sf.lastName.errors.required">Last name is required</div>
+                  </div>
+                  <input class="form-control" type="text" formControlName="address" [placeholder]="'Address'"><br>
+                  <div *ngIf="billingFormSubmitted && sf.address.errors" class="invalid-feedback">
+                    <div *ngIf="sf.address.errors.required">Address is required</div>
+                  </div>
+                  <input class="form-control" type="text" formControlName="zipCode" [placeholder]="'Zipcode'"><br>
+                  <div *ngIf="billingFormSubmitted && sf.zipCode.errors" class="invalid-feedback">
+                    <div *ngIf="sf.zipCode.errors.required">Zipcode is required</div>
+                  </div>
+                  <input class="form-control" type="text" formControlName="city" [placeholder]="'City'"><br>
+                  <div *ngIf="billingFormSubmitted && sf.city.errors" class="invalid-feedback">
+                    <div *ngIf="sf.city.errors.required">City is required</div>
+                  </div>
+                  <select class="form-control" (change)="updateShippingFee()" *ngIf="countries"
+                          formControlName="country">
+                    <option hidden value="" selected>Country</option>
+                    <option *ngFor="let country of countries" [value]="country.alpha2Code">{{country.name}}</option>
+                  </select>
+                  <div *ngIf="billingFormSubmitted && sf.country.errors" class="invalid-feedback">
+                    <div *ngIf="sf.country.errors.required">Country is required</div>
+                  </div>
+                  <br>
+                  <input class="form-control" type="text" formControlName="phone" [placeholder]="'Phone'"><br>
+                  <div *ngIf="billingFormSubmitted && sf.phone.errors" class="invalid-feedback">
+                    <div *ngIf="sf.phone.errors.required">Phone is required</div>
+                  </div>
+                </form>
+
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-12">
+                Shipping and billing address are the same <input type="checkbox" name="billingShippingSame"
+                                                                 [formControl]="billingShippingSame">
+                <br>
+                <input type="submit"
+                       class="btn btn-outline-danger"
+                       value="Check form"
+                       (click)="onClickSubmit()">
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <div class="col-sm-12 col-md-4">
+        <div class="container">
+          <div class="content">
+
+            <div class="row">
+              <div class="col-12">
+                In Shopping cart:
+                <hr>
+              </div>
+            </div>
+            <div *ngFor="let article of getCartItems" class="row">
+              <div class="col-12">
+                {{article.items}} x {{article.label}}
+                <span *ngIf="article.size !== ''">({{article.size}})</span><br>
+                <span>€ {{ article.itemPrice * article.items | number : '.2-2'}}</span><br>
+                <hr class="divider">
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-12">
+                Product price: € {{ getProductPriceFromCart | number : '.2-2' }}
+                <hr>
+              </div>
+            </div>
+
+            <div *ngIf="getShippingFeeFromCart > 0" class="row">
+              <div class="col-12">
+                Shipping fee: € {{ getShippingFeeFromCart | number : '.2-2' }}
+                <hr>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-12">
+                Total price: € {{ getTotalPriceFromCart | number : '.2-2' }}
+                <hr>
+              </div>
+            </div>
+
+            <div *ngIf="readyForPayment && !showSuccessPage" class="row">
+              <div class="col-12"><br>
+                <app-paypal-integration></app-paypal-integration>
+              </div>
+            </div>
+            <div *ngIf="showSuccessPage" class="row">
+              <div class="col-12"><br>
+                <button (click)="goToBasket()" type="button"
+                        class="btn btn-success btn-number">Continue to payment
+                </button>
+              </div>
+            </div>
+
+            <div *ngIf="getCartItems.length > 0 && !showSuccessPage" class="row">
+              <div class="col-12"><br>
+                <button (click)="goToShop()" type="button"
+                        class="btn btn-success btn-number">Go back to shop
+                </button>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-12 info">
+                <div class="info-ico">i</div>
+                <div>
+                  <p>If you don't have a creditcard you can first create a <a href="https://www.paypal.com/"
+                                                                              target="_blank">PayPal</a> account and
+                    attach your debitcard to it. That way you can still purchase some nice items in our shop.
+                  </p>
+                  <p>
+                    Note: IDeal only works in the Netherlands and works best when the purchase is done on a computer instead of a phone.
+                  </p>
+                </div>
+                <hr>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
